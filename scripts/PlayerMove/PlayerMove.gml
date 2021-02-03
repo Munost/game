@@ -45,4 +45,29 @@ if (dir < 90 and dir > 0 or dir > 270 and dir < 360) { //Right
 	
 } 
 
+rot = point_direction(x, y, mouse_x, mouse_y);
+
+if mouse_check_button(mb_left) {
+	if (spd < maxSpd) { 
+		spd += 0.5
+	}
+}
+
+if mouse_check_button_released(mb_left) {
+arrow = instance_create_layer(x, y, "Instances", oArrow)
+arrow.direction = rot;
+arrow.image_angle = rot;
+arrow.gravity = 1;
+arrow.gravity_direction = 270; 
+arrow.spd = spd
+
+	with (arrow) {
+		image_angle = direction - 90;
+		motion_add(direction, spd)
+		
+	}
+spd = 0
+}
+
+
 }

@@ -6,3 +6,7 @@ jumpSpeed = 4;
 moveSpeed = 2;
 image_speed = 0;
 sprite_index = sOrion;
+
+spd = 0;
+maxSpd = 20;
+rot = 0;
